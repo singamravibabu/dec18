@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block body %}
+<div class="container text-center">
+<h1 class="text-center m-5"><img src="{% static 'images/delete.png' %}" width="50px">DELETE</h1>
+
+<form method="post"> {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input type="submit" value="Confirm" class="btn btn-danger">
+</form>
+</div>
+{% endblock %}
